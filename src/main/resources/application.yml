@@ -1,0 +1,13 @@
+server:
+  port: 8080
+#DB connection
+spring:
+  datasource:
+    hikari:
+      driver-class-name:
+      jdbc-url:
+      username:
+      password:
+      maximum-pool-size:
+mybatis:
+  mapper-locations: /mapper/*.xml

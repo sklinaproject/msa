@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="csk.lina.msa.repository.mapper.IProductMapper">
+    <select id="findAllProducts" resultType="sk.lina.msa.repository.rvo.ProductVO">
+        SELECT productName
+        FROM products
+        WHERE productCode = #{productCode}
+    </select>
+</mapper>
