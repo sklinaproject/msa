@@ -18,6 +18,11 @@ public class SampleController {
     @Autowired
     ISearchProductService searchProductService;
 
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public void testMethod() {
+        log.debug("testMethod");
+    }
+
     @RequestMapping(value = "/product/{productCode}", method = RequestMethod.POST)
     public ResponseEntity<ProductDTO> getProductsInfo(@PathVariable("productCode") String productCode) {
         log.debug("getProducts productCode : " + productCode);

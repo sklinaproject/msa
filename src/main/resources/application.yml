@@ -1,13 +1,11 @@
-server:
-  port: 8080
 #DB connection
 spring:
   datasource:
     hikari:
-      driver-class-name:
-      jdbc-url:
-      username:
-      password:
-      maximum-pool-size:
+      driver-class-name: net.sf.log4jdbc.DriverSpy
+      jdbc-url: jdbc:log4jdbc:mysql://database-1.csvj9ae9rzmk.ap-northeast-2.rds.amazonaws.com:3306/classicmodels
+      username: sklina
+      password: 123456
+      maximum-pool-size: 10
 mybatis:
   mapper-locations: /mapper/*.xml
