@@ -15,4 +15,6 @@ public class ProductDTO {
     int quantityInStock;
     BigDecimal buyPrice;
     BigDecimal MSRP;
+    String orderNumber;
+    String productStatus;
 }

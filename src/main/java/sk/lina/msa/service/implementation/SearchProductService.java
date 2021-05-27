@@ -32,4 +32,25 @@ public class SearchProductService implements ISearchProductService {
 
         return productDTO;
     }
+
+    @Override
+    public ProductDTO deleteAllOrderdetails(String orderNumber, String productCode) {
+        log.debug("delProductsInfo orderNumber :" + orderNumber);
+        log.debug("delProductsInfo productCode :" + productCode);
+
+        ProductDTO productDTO = new ProductDTO();
+        ProductVO productVO = new ProductVO();
+
+        productVO = productMapper.deleteAllOrderdetails(orderNumber, productCode);
+
+        log.debug("delProductsInfo accountVO :" + productVO);
+
+        productDTO.setOrderNumber(orderNumber);
+        productDTO.setProductCode(productCode);
+        productDTO.setProductStatus("삭제");
+
+        log.debug("delProductsInfo productDTO :" + productDTO);
+
+        return productDTO;
+    }
 }

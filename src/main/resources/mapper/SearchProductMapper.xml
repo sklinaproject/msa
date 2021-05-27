@@ -8,4 +8,10 @@
         FROM products
         WHERE productCode = #{productCode}
     </select>
+    <select id="deleteAllOrderdetails" resultType="sk.lina.msa.repository.rvo.ProductVO">
+        DELETE
+        FROM orderdetails
+        WHERE orderNumber = #{orderNumber}
+        AND productCode = #{productCode}
+    </select>
 </mapper>

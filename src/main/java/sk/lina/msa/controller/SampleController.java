@@ -30,4 +30,13 @@ public class SampleController {
         log.debug("searchProductService productDTO : " + productDTO);
         return new ResponseEntity<ProductDTO>(productDTO, HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/productDel/{orderNumber},{productCode}", method = RequestMethod.POST)
+    public ResponseEntity<ProductDTO> delProductsInfo(@PathVariable("orderNumber") String orderNumber, @PathVariable("productCode") String productCode) {
+        log.debug("delProducts orderNumber : " + orderNumber);
+        log.debug("delProducts productCode : " + productCode);
+        ProductDTO productDTO = searchProductService.deleteAllOrderdetails(orderNumber, productCode);
+        log.debug("deleteProductService productDTO : " + productDTO);
+        return new ResponseEntity<ProductDTO>(productDTO, HttpStatus.OK);
+    }
 }

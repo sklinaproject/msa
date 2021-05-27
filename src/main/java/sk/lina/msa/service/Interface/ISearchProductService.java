@@ -4,4 +4,5 @@ import sk.lina.msa.model.ProductDTO;
 
 public interface ISearchProductService {
     ProductDTO getProductsInfo(String productCode);
+    ProductDTO deleteAllOrderdetails(String orderNumber, String productCode);
 }
