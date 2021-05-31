@@ -16,21 +16,20 @@ public class SearchProductService implements ISearchProductService {
     private IProductMapper productMapper;
 
     @Override
-    public ProductDTO getProductsInfo(String productCode) {
-        log.debug("getProductsInfo productCode :" + productCode);
+    public ProductDTO getProductsInfo(String inputProductCode) {
+        log.debug("getProductsInfo inputProductCode :" + inputProductCode);
 
-        ProductDTO productDTO = new ProductDTO();
-        ProductVO productVO = new ProductVO();
+        ProductDTO outputProductDTO = new ProductDTO();
 
-        productVO = productMapper.findAllProducts(productCode);
+        ProductVO outputProductVO = productMapper.findAllProducts(inputProductCode);
 
-        log.debug("getProductsInfo accountVO :" + productVO);
+        log.debug("getProductsInfo outputProductVO :" + outputProductVO);
 
-        productDTO.setProductName(productVO.getProductName());
+        outputProductDTO.setProductName(outputProductVO.getProductName());
 
-        log.debug("findAllProducts productDTO :" + productDTO);
+        log.debug("findAllProducts outputProductDTO :" + outputProductDTO);
 
-        return productDTO;
+        return outputProductDTO;
     }
 
     @Override

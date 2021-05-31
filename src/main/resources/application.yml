@@ -1,4 +1,6 @@
 #DB connection
+kafka:
+  bootstrapServers: 54.180.71.26:9092
 spring:
   datasource:
     hikari:
